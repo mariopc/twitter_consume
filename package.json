@@ -1,0 +1,15 @@
+{
+  "name": "nodetwitter",
+  "version": "1.0.0",
+  "description": "Twitter Testing CLient",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mario Peña",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.19.3",
+    "twitter": "^1.7.1"
+  }
+}
