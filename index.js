@@ -12,14 +12,14 @@ var client = new Twitter({
 });
 
 let now = moment().format('YYYY-MM-DD');
-
 let query = `${configObj.hashtag} since:${now}`
+let reg = new RegExp(configObj.words, "i");
 
 client.get('search/tweets', {q: query, result_type: 'recent', lang: 'es'}, (error, tweets, response) => {    
     if (error)
         console.log(error);
     for (tweet in tweets.statuses) {
-        var reg = new RegExp(configObj.words, "i");
+        
         if (tweets.statuses[tweet].text.search(reg) != -1) {
             let time = moment(tweets.statuses[tweet].created_at, "dd MMM DD HH:mm:ss ZZ YYYY").format("YYYY-MM-DD HH:mm:ss ZZ");
             console.log('[' + time + '] - ' + tweets.statuses[tweet].text);
