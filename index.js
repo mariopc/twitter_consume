@@ -18,6 +18,7 @@ let reg = new RegExp(configObj.words, "i");
 client.get('search/tweets', {q: query, result_type: 'recent', lang: 'es'}, (error, tweets, response) => {    
     if (error)
         console.log(error);
+	return
     for (tweet in tweets.statuses) {
         
         if (tweets.statuses[tweet].text.search(reg) != -1) {
